@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+extern char **environ;
+
 int _puts(char *s);
 int _putchar(char c);
 int _strlen(char *s);

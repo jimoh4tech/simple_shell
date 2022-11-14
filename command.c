@@ -19,7 +19,6 @@ void __exit(char *status)
 
 void printenv(void)
 {
-	extern char **environ;
 	unsigned int i = 0;
 
 	while (environ[i] != NULL)

@@ -10,7 +10,6 @@
 char *_getenv(char *name)
 {
 	char *tmp;
-	extern char **environ;
 	unsigned int i = 0;
 
 	while(environ[i])
@@ -31,7 +30,6 @@ char *_getenv(char *name)
 
 int _envlen(void)
 {
-	extern char **environ;
 	unsigned int i = 0;
 
 	while(environ[i])
@@ -50,7 +48,6 @@ int _envlen(void)
 int getenv_pos(char *name)
 {
 	char *tmp;
-	extern char **environ;
 	unsigned int i = 0;
 
 	while (environ[i])
@@ -113,7 +110,6 @@ char *concat_env(char *name, char *value)
 int _setenv(char *name, char *value, int overwrite)
 {
 	int i = 0;
-	extern char **environ;
 
 	if (_getenv(name))
 	{

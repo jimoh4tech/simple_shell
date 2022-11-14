@@ -8,7 +8,6 @@
 
 void execute(char **argv, char *filename)
 {
-	extern char **environ;
 	pid_t pid;
 	int status = 0;
 
