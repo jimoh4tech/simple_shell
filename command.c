@@ -40,7 +40,7 @@ void _chdir(char *path)
 	{
 		if (_strcmp(path, "-"))
 			path = "/root";
-		
+
 		if (chdir(path) != 0)
 			perror("Error");
 	}

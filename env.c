@@ -76,7 +76,7 @@ char *concat_env(char *name, char *value)
 
 	path = malloc(sizeof(char) * (_strlen(name) + _strlen(value) + 2));
 	if (!path)
-	  exit(1);
+		exit(1);
 
 	while(name[i] != '\0')
 	{

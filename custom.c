@@ -38,8 +38,9 @@ int _puts(char *s)
 int _strlen(char *s)
 {
 	int i;
+
 	for (i = 0; s[i] != '\0'; i++)
-		;
+	;
 	return (i);
 }
 
@@ -49,13 +50,17 @@ int _strlen(char *s)
  * @s2: pointer to the second string
  *
  * Return: 1 if true, else 0
+ *
  */
 
 int _strcmp(char *s1, char *s2)
 {
 	int i, l1, l2;
+
 	l1 = _strlen(s1);
+
 	l2 = _strlen(s2);
+
 	if (l1 != l2)
 		return (0);
 	for (i = 0; i < l1; i++)
@@ -90,9 +95,9 @@ char *_strtok(char *str, char *delim)
 		for (d = delim; *d != '\0'; d++)
 		{
 			if (*b == *d)
-			{
+				{
 				*b = '\0';
-			        buffer = ++b;
+					buffer = ++b;
 				return (token);
 			}
 		}
