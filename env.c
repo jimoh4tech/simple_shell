@@ -80,17 +80,17 @@ char *concat_env(char *name, char *value)
 
 	while (name[i] != '\0')
 	{
-	  path[j] = name[i];
-	  j++;
-	  i++;
+		path[j] = name[i];
+		j++;
+		i++;
 	}
 	path[j] = '=';
 	i = 0;
 	while (value[i] != '\0')
 	{
-	  j++;
-	  path[j] = value[i];
-	  i++;
+		j++;
+		path[j] = value[i];
+		i++;
 	}
 	j++;
 	path[j] = '\0';
@@ -113,16 +113,16 @@ int _setenv(char *name, char *value, int overwrite)
 
 	if (_getenv(name))
 	{
-	  i = getenv_pos(name);
-	  if (overwrite && i)
-	    environ[i] = concat_env(name, value);
+		i = getenv_pos(name);
+		if (overwrite && i)
+			environ[i] = concat_env(name, value);
 	}
 	else
 	{
-	  i = _envlen();
-	  if (overwrite && i)
-	    environ[i] = concat_env(name, value);
-	  environ[i + 1] = NULL;
-	}    
+		i = _envlen();
+		if (overwrite && i)
+			environ[i] = concat_env(name, value);
+		environ[i + 1] = NULL;
+	}
 	return (i);
 }

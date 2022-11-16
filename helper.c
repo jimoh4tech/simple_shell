@@ -30,16 +30,13 @@ char *trim(char *s)
 	size_t l = _strlen(s);
 
 	while (isspace(s[l - 1]))
-
-	       --l;
-
+		--l;
 	while (*s && isspace(*s))
-
-	  {
+	{
 		++s;
 		--l;
 	}
-	       return (strndup(s, l));
+	return (strndup(s, l));
 
 }
 

@@ -14,7 +14,7 @@ void execute(char **argv, char *filename)
 	pid = fork();
 	if (pid == -1)
 	{
-  		perror(filename);
+		perror(filename);
 		exit(1);
 	}
 
@@ -28,9 +28,9 @@ void execute(char **argv, char *filename)
 	}
 	else
 	{
-	 	wait(&status);
+		wait(&status);
 	}
-		  
+
 }
 
 /**

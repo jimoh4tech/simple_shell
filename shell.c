@@ -25,11 +25,10 @@ int check_cmd(char *s)
 
 char *prompt(char *arg)
 {
-  char *line= NULL, *cmd;
+	char *line = NULL, *cmd;
 	size_t len = 0, input = 0;
 
-	do
-	{
+	do {
 		_puts("$ ");
 		input = _getline(&line, &len, stdin);
 		cmd = first_token(line);
@@ -64,11 +63,10 @@ int main(__attribute__((unused)) int argc, char *argv[])
 	while (!feof(stdin))
         {
 		line = prompt(argv[0]);
-	        
+
 		i = 0;
 		token = strtok(line, " ");
-		while (token)
-		{
+		while (token) {
 		  av[i] = token;
 		  token = strtok(NULL, " ");
 		  i++;
@@ -78,6 +76,6 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		parser(av, argv[0]);
 		/* free_grid(av); */
 	}
-	
+
 	return (0);
 }
