@@ -67,10 +67,10 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		i = 0;
 		token = strtok(line, " ");
 		while (token)
-		  {
-		  av[i] = token;
-		  token = strtok(NULL, " ");
-		  i++;
+		{
+			av[i] = token;
+			token = strtok(NULL, " ");
+			i++;
 		}
 		av[i] = NULL;
 
