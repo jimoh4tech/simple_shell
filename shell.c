@@ -19,6 +19,7 @@ int check_cmd(char *s)
 
 /**
  * prompt - prints the prompt message
+ * @arg: pointer to the args
  *
  * Return: pointer to the string
  */
@@ -52,6 +53,8 @@ char *prompt(char *arg)
 
 /**
  * main - simple shell program
+ * @argc: counts of th args variable
+ * @argv: array to th args pointer
  *
  * Return: 1 on error, else 0;
  */
