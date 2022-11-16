@@ -61,12 +61,13 @@ int main(__attribute__((unused)) int argc, char *argv[])
 	size_t i = 0;
 
 	while (!feof(stdin))
-        {
+	{
 		line = prompt(argv[0]);
 
 		i = 0;
 		token = strtok(line, " ");
-		while (token) {
+		while (token)
+		  {
 		  av[i] = token;
 		  token = strtok(NULL, " ");
 		  i++;
