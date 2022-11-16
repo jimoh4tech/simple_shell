@@ -53,7 +53,7 @@ void parser(char **argv, char *filename)
 	else if (_strcmp(argv[0], "cd"))
 		_chdir(argv[1]);
 	else if (_strcmp(argv[0], "setenv"))
-	  _setenv(argv[1], argv[2], 0);
+		_setenv(argv[1], argv[2], 0);
 	else
 	{
 		execute(argv, filename);
@@ -80,7 +80,7 @@ char **tokenize(char *s, char delim)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-	  _putchar(s[i]);
+		_putchar(s[i]);
 		while (s[i] != delim && s[i] != '\0')
 		{
 			token[cur] = s[i];
