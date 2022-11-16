@@ -12,7 +12,7 @@ char *_getenv(char *name)
 	char *tmp;
 	unsigned int i = 0;
 
-	while(environ[i])
+	while (environ[i])
 	{
 		tmp = before_delim(environ[i], '=');
 		if (_strcmp(tmp, name))
@@ -32,7 +32,7 @@ int _envlen(void)
 {
 	unsigned int i = 0;
 
-	while(environ[i])
+	while (environ[i])
 		i++;
 
 	return (i);
@@ -54,7 +54,7 @@ int getenv_pos(char *name)
 	{
 		tmp = before_delim(environ[i], '=');
 		if (_strcmp(tmp, name))
-		   
+
 			return (i);
 		i++;
 	}
@@ -71,26 +71,26 @@ int getenv_pos(char *name)
 
 char *concat_env(char *name, char *value)
 {
-  unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0;
 	char *path;
 
 	path = malloc(sizeof(char) * (_strlen(name) + _strlen(value) + 2));
 	if (!path)
-	  exit(1);
+		exit(1);
 
-	while(name[i] != '\0')
+	while (name[i] != '\0')
 	{
-	  path[j] = name[i];
-	  j++;
-	  i++;
+		path[j] = name[i];
+		j++;
+		i++;
 	}
 	path[j] = '=';
 	i = 0;
-	while(value[i] != '\0')
+	while (value[i] != '\0')
 	{
-	  j++;
-	  path[j] = value[i];
-	  i++;
+		j++;
+		path[j] = value[i];
+		i++;
 	}
 	j++;
 	path[j] = '\0';
@@ -113,16 +113,16 @@ int _setenv(char *name, char *value, int overwrite)
 
 	if (_getenv(name))
 	{
-	  i = getenv_pos(name);
-	  if (overwrite && i)
-	    environ[i] = concat_env(name, value);
+		i = getenv_pos(name);
+		if (overwrite && i)
+			environ[i] = concat_env(name, value);
 	}
 	else
 	{
-	  i = _envlen();
-	  if (overwrite && i)
-	    environ[i] = concat_env(name, value);
-	  environ[i + 1] = NULL;
-	}    
+		i = _envlen();
+		if (overwrite && i)
+			environ[i] = concat_env(name, value);
+		environ[i + 1] = NULL;
+	}
 	return (i);
 }

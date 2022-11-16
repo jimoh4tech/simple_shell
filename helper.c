@@ -3,14 +3,15 @@
 /**
  * stripe_newline - removes newline character
  * @s:pointer to the string
- * 
  * Return: pointer to the stripped string
  */
 
 char *stripe_newline(char *s)
 {
 	int i;
+
 	for (i = 0; s[i] != '\0'; i++)
+
 		if (s[i] == '\n')
 			s[i] = '\0';
 	return (s);
@@ -27,15 +28,16 @@ char *stripe_newline(char *s)
 char *trim(char *s)
 {
 	size_t l = _strlen(s);
+
 	while (isspace(s[l - 1]))
-	       --l;
+		--l;
 	while (*s && isspace(*s))
 	{
 		++s;
 		--l;
 	}
-	       return (strndup(s, l));
-		 
+	return (strndup(s, l));
+
 }
 
 
@@ -51,7 +53,9 @@ char *trim(char *s)
 size_t _getline(char **lineptr, size_t *n, FILE *stream)
 {
 	static char line[256];
+
 	char *ptr;
+
 	size_t len;
 
 	if (lineptr == NULL || ferror(stream) || feof(stream))
@@ -60,10 +64,12 @@ size_t _getline(char **lineptr, size_t *n, FILE *stream)
 	fgets(line, 256, stream);
 
 	ptr = strchr(line, '\n');
+
 	if (ptr)
 		*ptr = '\0';
 
 	len = _strlen(line);
+
 	if ((len + 1) < 256)
 	{
 		ptr = realloc(*lineptr, 256);
@@ -93,7 +99,7 @@ char *before_delim(char *s, char c)
 	value = malloc(sizeof(char) * _strlen(s));
 	if (!value)
 		exit(1);
-	
+
 	while (s[i] != '\0' && s[i] != c)
 	{
 		value[i] = s[i];
@@ -114,14 +120,14 @@ char *before_delim(char *s, char c)
 
 char *after_delim(char *s, char c)
 {
-  unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0;
 	char *value;
 
 	value = malloc(sizeof(char) * _strlen(s));
 	if (!value)
 		exit(1);
 
-	while(s[i] != '\0' && s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i++;
 
 	while (s[i] != '\0')
