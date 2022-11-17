@@ -30,12 +30,13 @@ char *prompt(char *arg)
 	size_t len = 0, input = 0;
 
 	do {
-		_puts("$ ");
+		if (isatty(STDIN_FILENO) == 1)
+			_puts("$ ");
 		input = _getline(&line, &len, stdin);
 		cmd = first_token(line);
 		if (feof(stdin))
 		{
-			_putchar('\n');
+		  /*_putchar('\n');*/
 			exit(0);
 		}
 		if (!(check_cmd(cmd)) && input > 0)
